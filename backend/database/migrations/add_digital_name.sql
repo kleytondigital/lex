@@ -1,0 +1,3 @@
+ALTER TABLE users
+ADD COLUMN digital_name VARCHAR(50) UNIQUE,
+ADD COLUMN profile_complete BOOLEAN DEFAULT false; 

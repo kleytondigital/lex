@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS landing_pages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    digital_name VARCHAR(255) NOT NULL UNIQUE,
+    objective ENUM('client', 'consultant') NOT NULL,
+    template JSON,
+    content JSON,
+    published BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+); 
